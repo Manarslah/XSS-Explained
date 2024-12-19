@@ -2,7 +2,7 @@
 Cross-Site Scripting (XSS) attacks are a type of injection, in which malicious scripts are injected into otherwise benign and trusted websites. 
 XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different user like as alert(1) this is the most popular.
 
-##types of XSS attacks 
+## types of XSS attacks 
 1.Refleected XSS 
   Description: off a web server often via a query string) and executed in a browser. 
   It happens in(search , URLs)
@@ -17,8 +17,9 @@ XSS attacks occur when an attacker uses a web application to send malicious code
  Client-side vulnerability 
  
 4.slef XSS 
+Occurs when a user unknowingly executes a malicious script that they themselves injected into a vulnerable input field (such as browser developer tools or manipulated links).
 
-##impact 
+## impact 
 
 Data theft as cookies or credentials
 Session hijacking and account takeovers.
@@ -75,7 +76,7 @@ Spreading malware via compromised websites
 - `<img LOWSRC="javascript:document.vulnerable=true;">`
 - `<~/XSS STYLE=xss:expression(alert('XSS'))>`
 
-##PoC by automation tool
+## PoC by automation tool
 
 1.creat file for find all URLs
 
@@ -86,11 +87,17 @@ gau example.com > urls.txt
 dalfox file urls.txt --output results.txt
 ```
 
-##Prevent XSS attacks
+## Preventing XSS Attacks
 
-1. Output Encoding
-2. Content Security Policy (CSP)
-3. Input Validation
+1. Output Encoding: Encode user input before outputting it back to the browser to ensure that scripts cannot be executed.
+2. Content Security Policy (CSP): CSP is a browser security feature that helps prevent XSS by restricting which scripts can be executed on a page.
+Example of a CSP header:
+```Content-Security-Policy: default-src 'self'; script-src 'self' https://trusted.com;```
+
+3. Input Validation: Validate and sanitize user inputs to ensure only safe data is processed.
+For example, block certain characters (e.g., <, >, &) or use whitelisting.
+4. HTTPOnly Cookies: Set the HttpOnly flag on cookies to prevent them from being accessed by JavaScript.
+5. Escape User Input: Ensure that any user-generated content (e.g., HTML, JavaScript) is properly escaped before being inserted into the pag
 
 References :
 [**OWASP**](https://owasp.org/www-project-top-ten/2017/A7_2017-Cross-Site_Scripting_(XSS))
