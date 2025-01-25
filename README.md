@@ -1,5 +1,5 @@
 # XSS-Explained
-Cross-Site Scripting (XSS) attacks are a type of injection, in which malicious scripts are injected into otherwise benign and trusted websites. 
+Crite Scripting (XSS) attacks are a type of injection, in which malicious scripts are injected into otherwise benign and trusted websites. 
 XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different user like as alert(1) this is the most popular.
 
 ## types of XSS attacks 
